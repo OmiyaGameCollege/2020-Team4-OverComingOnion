@@ -9,7 +9,7 @@ public class Player_Animation : MonoBehaviour
     public float jumpSpeed;//ジャンプする速度
     public float jumpHeight;//高さ制限
     public GroundCheck ground; //接地判定
-    public GameObject　minePrefab; //渦
+    public GameObject　UzuPrefab; //渦
 
     //プライベート変数
     private Animator anim = null;
@@ -53,7 +53,7 @@ public class Player_Animation : MonoBehaviour
             {
                 Vector3 position = transform.position;
                 position.x += 3;
-                Instantiate(minePrefab, position, minePrefab.transform.rotation);
+                Instantiate(UzuPrefab, position, UzuPrefab.transform.rotation);
 
             }
             
