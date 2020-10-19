@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
- public void LoadingNewScene()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("GameOver");
-    }  
+        SceneManager.LoadScene("GameClear");
+    }
 }
