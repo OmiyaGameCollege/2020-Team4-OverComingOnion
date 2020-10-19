@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class Player_Animation : MonoBehaviour
 {
     //インスペクターで設定する
@@ -89,5 +90,8 @@ public class Player_Animation : MonoBehaviour
             xSpeed = 0.0f;
         }
         rb.velocity = new Vector2(xSpeed, ySpeed);
-    }
+     }
+  
 }
+
+
