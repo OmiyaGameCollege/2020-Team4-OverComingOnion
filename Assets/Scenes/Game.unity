@@ -413,9 +413,9 @@ MonoBehaviour:
   speed: 5
   gravity: 7
   jumpSpeed: 7
-  jumpHeight: 1.5
+  jumpHeight: 2.3
   ground: {fileID: 381969862}
-  minePrefab: {fileID: 800156186160915534, guid: 22598dc88cbe00e40bc17f3b13cb9481,
+  UzuPrefab: {fileID: 7641711766651756919, guid: 0925667844b236b43b878197c685f3d3,
     type: 3}
 --- !u!95 &720029550
 Animator:
