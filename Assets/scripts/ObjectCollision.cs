@@ -26,10 +26,13 @@ public class ObjectCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //もしエネミータグと当たったら
         if (collision.gameObject.tag == "Enemy")
         {        
+            //うずカウントをマイナスに
             UzuCount--;
 
+            //うずを消す
             Destroy(gameObject);
 
         }

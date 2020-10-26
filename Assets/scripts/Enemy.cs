@@ -58,11 +58,12 @@ public class Enemy : MonoBehaviour
         // もしもPlayertagを持つオブジェクトに当たったら
         if (collision.collider.tag == PlayerTag)
         {
-            // プレイヤーとの当たり判定チェック
-            Debug.Log("プレイヤーと接触した");
+
         } 
+        //もしエネミーと当たったら
         if (collision.gameObject.tag == "Uzu")
         {
+            //エネミーが消える
             Destroy(gameObject);
         }
 
