@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObjectCollision : MonoBehaviour
 {
+    public static int UzuCount = 0;
+
+
     [Header("これを踏んだ時のプレイヤーが跳ねる高さ")] public float boundHeight;
     /// <summary>
     /// このオブジェクトをプレイヤーが踏んだかどうか
@@ -12,7 +15,7 @@ public class ObjectCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UzuCount++;
     }
 
     // Update is called once per frame
@@ -24,8 +27,11 @@ public class ObjectCollision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
-        {
+        {        
+            UzuCount--;
+
             Destroy(gameObject);
+
         }
     }
 }

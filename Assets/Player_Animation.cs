@@ -60,11 +60,13 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1)
             {
                 Vector3 position = transform.position;
                 position.x += 3;
                 Instantiate(UzuPrefab, position, UzuPrefab.transform.rotation);
+
+
 
             }
             
@@ -101,7 +103,8 @@ public class Player_Animation : MonoBehaviour
         }
         rb.velocity = new Vector2(xSpeed, ySpeed);
      }
-  
+
+   
 }
 
 
