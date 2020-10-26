@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5495615881265852832}
   - component: {fileID: 6034868859536406878}
   - component: {fileID: 60828273294568822}
+  - component: {fileID: 114196024648851438}
   m_Layer: 0
   m_Name: Uzu
   m_TagString: Untagged
@@ -262,3 +263,17 @@ PolygonCollider2D:
       - {x: 0.78, y: 1}
       - {x: 0.79999995, y: 1}
       - {x: 0.78999996, y: 1.01}
+--- !u!114 &114196024648851438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641711766651756919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb50517d9d0a9c0418855fe38095ee02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundHeight: 10
+  playerStepOn: 0
