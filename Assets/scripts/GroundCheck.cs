@@ -5,7 +5,9 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private string groundTag = "Ground";
-    private bool isGround = false;
+    private string UzuTag = "Uzu";
+
+    public bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
 
     //接地判定を返すメソッド
@@ -33,6 +35,12 @@ public class GroundCheck : MonoBehaviour
         {
             isGroundEnter = true;
         }
+
+        if (collision.tag == UzuTag)
+        {
+            isGroundEnter = true;
+        }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -41,6 +49,11 @@ public class GroundCheck : MonoBehaviour
         {
             isGroundStay = true;
         }
+        if (collision.tag == UzuTag)
+        {
+            isGroundStay = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -49,5 +62,10 @@ public class GroundCheck : MonoBehaviour
         {
             isGroundExit = true;
         }
+        if (collision.tag == UzuTag)
+        {
+            isGroundExit = true;
+        }
+
     }
 }

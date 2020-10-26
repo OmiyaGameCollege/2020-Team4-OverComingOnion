@@ -52,14 +52,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-// Update is called once per frame
-private void OnCollisionEnter2D(Collision2D collision)
+    // Update is called once per frame
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // もしもPlayertagを持つオブジェクトに当たったら
         if (collision.collider.tag == PlayerTag)
         {
             // プレイヤーとの当たり判定チェック
             Debug.Log("プレイヤーと接触した");
+        } 
+        if (collision.gameObject.tag == "Uzu")
+        {
+            Destroy(gameObject);
         }
+
+
     }
+
+
 }
+

@@ -15,9 +15,19 @@ public class Player_Animation : MonoBehaviour
     //プライベート変数
     private Animator anim = null;
     private Rigidbody2D rb = null;
+    private CapsuleCollider2D capcol = null;
     private bool isGround = false;
     private bool isJump = false;
+    private bool isRun = false;
+    private bool isHead = false;
+    private bool isDown = false;
+    private bool isOtherJump = false;
     private float jumpPos = 0.0f;
+    private float otherJumpHeight = 0.0f;
+    private float dashTime = 0.0f;
+    private float jumpTime = 0.0f;
+    private float beforeKey = 0.0f;
+    private string UzuTag = "Uzu";
 
     void Start()
     {
