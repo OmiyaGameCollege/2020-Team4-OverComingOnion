@@ -10,7 +10,7 @@ public class Player_Animation : MonoBehaviour
     public float jumpSpeed;//ジャンプする速度
     public float jumpHeight;//高さ制限
     public GroundCheck ground; //接地判定
-    public GameObject　UzuPrefab; //渦
+    public GameObject UzuPrefab; //渦
 
     //プライベート変数
     private Animator anim = null;
@@ -60,7 +60,6 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
 
-            //"Fire1"に対応するボタンが押された時とうず
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1)
             {
                 Vector3 position = transform.position;
@@ -70,7 +69,7 @@ public class Player_Animation : MonoBehaviour
 
 
             }
-            
+
 
         }
         else if (isJump)
@@ -87,13 +86,19 @@ public class Player_Animation : MonoBehaviour
         }
         if (horizontalKey > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            //transform.localScale = new Vector3(1, 1, 1);
+            // 背景を反転させない処理
+            GetComponent<SpriteRenderer>().flipX = false;
+            // 右に走るアニメーション実行処理
             anim.SetBool("run", true);
             xSpeed = speed;
         }
         else if (horizontalKey < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            // transform.localScale = new Vector3(-1, 1, 1);
+            // 背景を反転させない処理
+            GetComponent<SpriteRenderer>().flipX = true;
+            // 左に走るアニメーション処理
             anim.SetBool("run", true);
             xSpeed = -speed;
         }
@@ -103,9 +108,9 @@ public class Player_Animation : MonoBehaviour
             xSpeed = 0.0f;
         }
         rb.velocity = new Vector2(xSpeed, ySpeed);
-     }
+    }
 
-   
+
 }
 
 
