@@ -86,13 +86,19 @@ public class Player_Animation : MonoBehaviour
         }
         if (horizontalKey > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            //transform.localScale = new Vector3(1, 1, 1);
+            // 背景を反転させない処理
+            GetComponent<SpriteRenderer>().flipX = false;
+            // 右に走るアニメーション実行処理
             anim.SetBool("run", true);
             xSpeed = speed;
         }
         else if (horizontalKey < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            // transform.localScale = new Vector3(-1, 1, 1);
+            // 背景を反転させない処理
+            GetComponent<SpriteRenderer>().flipX = true;
+            // 左に走るアニメーション処理
             anim.SetBool("run", true);
             xSpeed = -speed;
         }
