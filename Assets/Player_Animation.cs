@@ -60,6 +60,7 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
 
+            //"Fire1"に対応するボタンが押された時とうず
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1)
             {
                 Vector3 position = transform.position;
