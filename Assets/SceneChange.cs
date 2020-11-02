@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;  
+using UnityEngine.SceneManagement;  //「2」
 
-public class SceneChange: MonoBehaviour
+public class SceneChange : MonoBehaviour
 {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("hahaha");
-
-            SceneManager.LoadScene("Game");
-
+            SceneManager.LoadScene("Game");    //「3」
         }
     }
 }
