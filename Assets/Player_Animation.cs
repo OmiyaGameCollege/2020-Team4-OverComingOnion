@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player_Animation : MonoBehaviour
 {
     //インスペクターで設定する
@@ -60,7 +60,7 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
             // もしもCTRLキーを押して、渦が5個以下なら
-            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 5)
+            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 10)
             {
 
                 Vector3 position = transform.position;
@@ -119,6 +119,19 @@ public class Player_Animation : MonoBehaviour
         }
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //もしエネミーと当たったら
+        if (collision.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+
+    }
+
 
 
 }
