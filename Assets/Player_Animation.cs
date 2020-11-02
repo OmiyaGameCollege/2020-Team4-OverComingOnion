@@ -59,14 +59,24 @@ public class Player_Animation : MonoBehaviour
             {
                 isJump = false;
             }
-
+            // もしもCTRLキーを押して、渦が5個以下なら
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 5)
             {
+
                 Vector3 position = transform.position;
-                position.x += 3;
+                // もしも画像が左向きなら
+                if (GetComponent<SpriteRenderer>().flipX)
+                {
+                    position.x -= 3;
+                }
+
+                // 右向きなら
+                else
+                {
+                    position.x += 3;
+                }
+
                 Instantiate(UzuPrefab, position, UzuPrefab.transform.rotation);
-
-
 
             }
 
