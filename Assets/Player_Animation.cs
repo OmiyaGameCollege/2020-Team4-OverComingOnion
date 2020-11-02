@@ -60,7 +60,7 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
 
-            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1)
+            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 5)
             {
                 Vector3 position = transform.position;
                 position.x += 3;
