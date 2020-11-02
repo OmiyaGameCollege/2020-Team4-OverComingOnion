@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;  //「2」
 
-public class SceneChange : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
 
     void Update()
@@ -12,7 +12,7 @@ public class SceneChange : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Explanation");    //「3」
+            SceneManager.LoadScene("Title");    //「3」
         }
 
     }
