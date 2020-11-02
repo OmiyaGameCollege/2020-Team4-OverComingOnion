@@ -8,6 +8,6 @@ public class GameClear : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("GameClear");
+        SceneManager.LoadScene("NextStage");
     }
 }
