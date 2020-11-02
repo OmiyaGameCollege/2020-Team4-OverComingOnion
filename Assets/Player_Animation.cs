@@ -126,7 +126,7 @@ public class Player_Animation : MonoBehaviour
         //もしエネミーと当たったら
         if (collision.gameObject.tag == "Enemy")
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Continue");
         }
 
 
