@@ -42,24 +42,19 @@ public class Player_Animation : MonoBehaviour
         isGround = ground.IsGround();
 
         //キー入力されたら行動する
-        float horizontalKey = Input.GetAxis("Horizontal");
-        float xSpeed = 0.0f;
-        float ySpeed = -gravity;
-        float verticalKey = Input.GetAxis("Vertical");
+        var horizontal = Input.GetAxis("Horizontal");
+        var vertical = Input.GetAxis("Vertical");
 
-        if (isGround)
+        var velocity = rb.velocity;
+        velocity.x = horizontal * 3;
+        if (Input.GetButtonDown("Jump"))
         {
-            if (verticalKey > 0)
-            {
-                ySpeed = jumpSpeed;
-                jumpPos = transform.position.y; //ジャンプした位置を記録する
-                isJump = true;
-            }
-            else
-            {
-                isJump = false;
-            }
-            // もしもCTRLキーを押して、渦が5個以下なら
+            velocity.y = jumpSpeed;
+        }
+        rb.velocity = velocity;
+
+        if(Input.GetButtonDown("Fire1"))
+        {
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1000)
             {
 
@@ -80,44 +75,55 @@ public class Player_Animation : MonoBehaviour
 
             }
 
+        }
+
+
+        if (isGround)
+        {
+            if (vertical > 0)
+            {
+                jumpPos = transform.position.y; //ジャンプした位置を記録する
+                isJump = true;
+            }
+            else
+            {
+                isJump = false;
+            }
+            //もしもCTRLキーを押して、渦が5個以下なら
+
 
         }
         else if (isJump)
         {
             //上ボタンを押されている。かつ、現在の高さがジャンプした位置から自分の決めた位置より下ならジャンプを継続する
-            if (verticalKey > 0 && jumpPos + jumpHeight > transform.position.y)
+            if (vertical > 0 && jumpPos + jumpHeight > transform.position.y)
             {
-                ySpeed = jumpSpeed;
             }
             else
             {
                 isJump = false;
             }
         }
-        if (horizontalKey > 0)
+        if (horizontal > 0)
         {
             //transform.localScale = new Vector3(1, 1, 1);
             // 背景を反転させない処理
             GetComponent<SpriteRenderer>().flipX = false;
             // 右に走るアニメーション実行処理
             anim.SetBool("run", true);
-            xSpeed = speed;
         }
-        else if (horizontalKey < 0)
+        else if (horizontal < 0)
         {
             // transform.localScale = new Vector3(-1, 1, 1);
             // 背景を反転させない処理
             GetComponent<SpriteRenderer>().flipX = true;
             // 左に走るアニメーション処理
             anim.SetBool("run", true);
-            xSpeed = -speed;
         }
         else
         {
             anim.SetBool("run", false);
-            xSpeed = 0.0f;
         }
-        rb.velocity = new Vector2(xSpeed, ySpeed);
     }
 
 
@@ -127,6 +133,8 @@ public class Player_Animation : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             SceneManager.LoadScene("Continue");
+            Debug.Log("watywatya2");
+
         }
 
 
