@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  gravity: 7
+  gravity: 5
   jumpSpeed: 7
   jumpHeight: 2.3
   ground: {fileID: 340569315986507636}
