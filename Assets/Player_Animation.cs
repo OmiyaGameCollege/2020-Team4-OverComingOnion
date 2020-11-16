@@ -49,12 +49,60 @@ public class Player_Animation : MonoBehaviour
         velocity.x = horizontal * 3;
         if (Input.GetButtonDown("Jump"))
         {
-            velocity.y = jumpSpeed;
+            if (isGround)
+            {
+
+                velocity.y = jumpSpeed;
+
+                if (vertical > 0)
+                {
+                    jumpPos = transform.position.y; //ジャンプした位置を記録する
+                    isJump = true;
+                }
+                else
+                {
+                    isJump = false;
+                }
+
+
+            }
+            else if (isJump)
+            {
+                //上ボタンを押されている。かつ、現在の高さがジャンプした位置から自分の決めた位置より下ならジャンプを継続する
+                if (vertical > 0 && jumpPos + jumpHeight > transform.position.y)
+                {
+                }
+                else
+                {
+                    isJump = false;
+                }
+            }
+            if (horizontal > 0)
+            {
+                //transform.localScale = new Vector3(1, 1, 1);
+                // 背景を反転させない処理
+                GetComponent<SpriteRenderer>().flipX = false;
+                // 右に走るアニメーション実行処理
+                anim.SetBool("run", true);
+            }
+            else if (horizontal < 0)
+            {
+                // transform.localScale = new Vector3(-1, 1, 1);
+                // 背景を反転させない処理
+                GetComponent<SpriteRenderer>().flipX = true;
+                // 左に走るアニメーション処理
+                anim.SetBool("run", true);
+            }
+            else
+            {
+                anim.SetBool("run", false);
+            }
         }
         rb.velocity = velocity;
 
         if(Input.GetButtonDown("Fire1"))
         {
+            //もしもCTRLキーを押して、渦が5個以下なら
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1000)
             {
 
@@ -78,52 +126,7 @@ public class Player_Animation : MonoBehaviour
         }
 
 
-        if (isGround)
-        {
-            if (vertical > 0)
-            {
-                jumpPos = transform.position.y; //ジャンプした位置を記録する
-                isJump = true;
-            }
-            else
-            {
-                isJump = false;
-            }
-            //もしもCTRLキーを押して、渦が5個以下なら
 
-
-        }
-        else if (isJump)
-        {
-            //上ボタンを押されている。かつ、現在の高さがジャンプした位置から自分の決めた位置より下ならジャンプを継続する
-            if (vertical > 0 && jumpPos + jumpHeight > transform.position.y)
-            {
-            }
-            else
-            {
-                isJump = false;
-            }
-        }
-        if (horizontal > 0)
-        {
-            //transform.localScale = new Vector3(1, 1, 1);
-            // 背景を反転させない処理
-            GetComponent<SpriteRenderer>().flipX = false;
-            // 右に走るアニメーション実行処理
-            anim.SetBool("run", true);
-        }
-        else if (horizontal < 0)
-        {
-            // transform.localScale = new Vector3(-1, 1, 1);
-            // 背景を反転させない処理
-            GetComponent<SpriteRenderer>().flipX = true;
-            // 左に走るアニメーション処理
-            anim.SetBool("run", true);
-        }
-        else
-        {
-            anim.SetBool("run", false);
-        }
     }
 
 
