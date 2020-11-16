@@ -23,7 +23,9 @@ public class BossEnemy : MonoBehaviour
     private string PlayerTag = "Player";
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
-    private bool rightTleftF = false;
+    private bool rightTleftF = false;   
+    int xVector = -1;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +37,6 @@ public class BossEnemy : MonoBehaviour
 
         if (sr.isVisible || nonVisibleAct)
         {
-            int xVector = -1;
             if (rightTleftF)
             {
                 xVector = 1;
@@ -55,15 +56,17 @@ public class BossEnemy : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // もしもPlayertagを持つオブジェクトに当たったら
-            Debug.Log("Hit2"); // ログを表示する
+        //もしエネミーと当たったら
+        if (collision.collider.tag == "Ground2")
+        {
+            rb.velocity = new Vector2(xVector * -speed, -gravity);
+
+        }
 
 
     }
-
 
 }
 
