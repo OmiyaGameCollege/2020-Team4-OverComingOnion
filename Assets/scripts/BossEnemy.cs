@@ -33,7 +33,6 @@ public class BossEnemy : MonoBehaviour
     void FixedUpdate()
     {
 
-
         if (sr.isVisible || nonVisibleAct)
         {
             int xVector = -1;
@@ -60,10 +59,8 @@ public class BossEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // もしもPlayertagを持つオブジェクトに当たったら
-        if (collision.collider.tag == PlayerTag)
-        {
+            Debug.Log("Hit2"); // ログを表示する
 
-        }
 
     }
 
