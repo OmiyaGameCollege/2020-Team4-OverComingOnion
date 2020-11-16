@@ -732,6 +732,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 340569316592756187, guid: d8e9205b648e5ec4fbbddb363e539e3c,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 340569316592756190, guid: d8e9205b648e5ec4fbbddb363e539e3c,
         type: 3}
       propertyPath: m_LocalPosition.x
