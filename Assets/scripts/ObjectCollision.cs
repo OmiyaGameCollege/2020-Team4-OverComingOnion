@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectCollision : MonoBehaviour
 {
+
     public static int UzuCount = 0;
 
 
@@ -31,7 +32,7 @@ public class ObjectCollision : MonoBehaviour
         {        
             //うずカウントをマイナスに
             UzuCount--;
-
+            
             //うずを消す
             Destroy(gameObject);
 

@@ -60,7 +60,7 @@ public class Player_Animation : MonoBehaviour
                 isJump = false;
             }
             // もしもCTRLキーを押して、渦が5個以下なら
-            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 10)
+            if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1000)
             {
 
                 Vector3 position = transform.position;
