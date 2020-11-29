@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Uzu
   - Ground2
+  - Ground3
   layers:
   - Default
   - TransparentFX

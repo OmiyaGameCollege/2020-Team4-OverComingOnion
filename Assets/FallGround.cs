@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallChecker : MonoBehaviour
+public class FallGround : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,18 @@ public class WallChecker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        
     }
 
-    // Update is called once per frame
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //もしエネミーと当たったら
+        if (collision.collider.tag == "Player")
+        {
+            
+        }
+
+    }
 
 }
