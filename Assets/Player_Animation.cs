@@ -47,9 +47,9 @@ public class Player_Animation : MonoBehaviour
 
         var velocity = rb.velocity;
         velocity.x = horizontal * 3;
-        if (Input.GetButtonDown("Jump"))
+        if (isGround)
         {
-            if (isGround)
+            if (Input.GetButtonDown("Jump"))
             {
 
                 velocity.y = jumpSpeed;
@@ -63,18 +63,19 @@ public class Player_Animation : MonoBehaviour
                 {
                     isJump = false;
                 }
-
-
             }
             else if (isJump)
             {
                 //上ボタンを押されている。かつ、現在の高さがジャンプした位置から自分の決めた位置より下ならジャンプを継続する
                 if (vertical > 0 && jumpPos + jumpHeight > transform.position.y)
                 {
+                    isJump = true;
+                    anim.SetBool("jump", true);
                 }
                 else
                 {
                     isJump = false;
+                    anim.SetBool("jump", false);
                 }
             }
             if (horizontal > 0)
@@ -87,7 +88,7 @@ public class Player_Animation : MonoBehaviour
             }
             else if (horizontal < 0)
             {
-                 transform.localScale = new Vector3(-1, 1, 1);
+                // transform.localScale = new Vector3(-1, 1, 1);
                 // 背景を反転させない処理
                 GetComponent<SpriteRenderer>().flipX = true;
                 // 左に走るアニメーション処理
@@ -100,7 +101,7 @@ public class Player_Animation : MonoBehaviour
         }
         rb.velocity = velocity;
 
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             //もしもCTRLキーを押して、渦が5個以下なら
             if (Input.GetButtonDown("Fire1") && ObjectCollision.UzuCount < 1000)
@@ -120,16 +121,9 @@ public class Player_Animation : MonoBehaviour
                 }
 
                 Instantiate(UzuPrefab, position, UzuPrefab.transform.rotation);
-
             }
-
         }
-
-
-
     }
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //もしエネミーと当たったら
@@ -137,14 +131,8 @@ public class Player_Animation : MonoBehaviour
         {
             SceneManager.LoadScene("Continue");
             Debug.Log("watywatya2");
-
         }
-
-
     }
-
-
-
 }
 
 
