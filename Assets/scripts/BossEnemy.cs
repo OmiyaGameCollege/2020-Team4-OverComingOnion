@@ -29,12 +29,12 @@ public class BossEnemy : MonoBehaviour
             // 障害物と衝突した場合
             if (collision.gameObject.CompareTag("Ground2"))
             {
-                transform.DORotate(new Vector3(0, -180, 0), 0.5f);
+                transform.DORotate(new Vector3(0, -180, 0), 0.0f);
                 moveSpeed = 5;
             }
             if (collision.gameObject.CompareTag("Ground3"))
             {
-                transform.DORotate(new Vector3(0, 360, 0), 0.5f);
+                transform.DORotate(new Vector3(0, 360, 0), 0.0f);
                 moveSpeed = -5;
             }
 
