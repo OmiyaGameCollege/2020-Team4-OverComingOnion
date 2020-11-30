@@ -87,7 +87,7 @@ public class Player_Animation : MonoBehaviour
             }
             else if (horizontal < 0)
             {
-                // transform.localScale = new Vector3(-1, 1, 1);
+                 transform.localScale = new Vector3(-1, 1, 1);
                 // 背景を反転させない処理
                 GetComponent<SpriteRenderer>().flipX = true;
                 // 左に走るアニメーション処理
