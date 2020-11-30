@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GOAL : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         SceneManager.LoadScene("GameClear");
     }
