@@ -7,7 +7,6 @@ public class ObjectCollision : MonoBehaviour
 
     public static int UzuCount = 0;
 
-
     [Header("これを踏んだ時のプレイヤーが跳ねる高さ")] public float boundHeight;
     /// <summary>
     /// このオブジェクトをプレイヤーが踏んだかどうか

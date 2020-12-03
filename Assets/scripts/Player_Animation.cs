@@ -29,6 +29,7 @@ public class Player_Animation : MonoBehaviour
     private float beforeKey = 0.0f;
     private string UzuTag = "Uzu";
 
+
     void Start()
     {
         //コンポーネントのインスタンスを捕まえる
