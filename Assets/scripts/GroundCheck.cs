@@ -5,6 +5,9 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private string groundTag = "Ground";
+    private string ground2Tag = "Ground2";
+    private string ground3Tag = "Ground3";
+
     private string UzuTag = "Uzu";
 
     public bool isGround = false;
@@ -36,6 +39,16 @@ public class GroundCheck : MonoBehaviour
             isGroundEnter = true;
         }
 
+        if (collision.tag == ground2Tag)
+        {
+            isGroundEnter = true;
+        }
+        if (collision.tag == ground3Tag)
+        {
+            isGroundEnter = true;
+        }
+
+
         if (collision.tag == UzuTag)
         {
             isGroundEnter = true;
@@ -49,6 +62,15 @@ public class GroundCheck : MonoBehaviour
         {
             isGroundStay = true;
         }
+        if (collision.tag == ground2Tag)
+        {
+            isGroundEnter = true;
+        }
+        if (collision.tag == ground3Tag)
+        {
+            isGroundEnter = true;
+        }
+
         if (collision.tag == UzuTag)
         {
             isGroundStay = true;
@@ -62,6 +84,15 @@ public class GroundCheck : MonoBehaviour
         {
             isGroundExit = true;
         }
+        if (collision.tag == ground2Tag)
+        {
+            isGroundEnter = true;
+        }
+        if (collision.tag == ground3Tag)
+        {
+            isGroundEnter = true;
+        }
+
         if (collision.tag == UzuTag)
         {
             isGroundExit = true;
