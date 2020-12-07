@@ -14,6 +14,7 @@ public class BossEnemy : MonoBehaviour
     }
     void FixedUpdate()
     {
+        int EnemyCount = 0;
         float speed = 0;
         if (gameObject.transform.forward.y == 0)
         {
@@ -37,7 +38,6 @@ public class BossEnemy : MonoBehaviour
                 transform.DORotate(new Vector3(0, 360, 0), 0.0f);
                 moveSpeed = -5;
             }
-
         }
     }
 }
