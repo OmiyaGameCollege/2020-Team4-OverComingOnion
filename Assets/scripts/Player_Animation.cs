@@ -131,7 +131,6 @@ public class Player_Animation : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             SceneManager.LoadScene("Continue");
-            Debug.Log("watywatya2");
         }
     }
 }
