@@ -10,6 +10,7 @@ public class EnemyBullet : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("Call", 3, 3);
+        Invoke("Cancel",5);
     }
 
     void Update()
@@ -26,6 +27,10 @@ public class EnemyBullet : MonoBehaviour
     {
         Debug.Log("発射");
         Instantiate(bullet, transform.position, transform.rotation);
-
     }
+
+    //void Cancel()
+    //{
+    //    Destroy(gameObject);
+    //}
 }
