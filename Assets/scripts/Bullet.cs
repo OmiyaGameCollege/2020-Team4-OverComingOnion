@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
         // 弾オブジェクトの移動係数を初期化
         bulletSpeed = 7.0f;
 
+        Invoke(nameof(timedestroy), 5);
     }
     void Update()
     {
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
     {
         // 弾オブジェクトの移動量ベクトルを作成（数値情報）
         Vector2 bulletMovement = new Vector2(-1, 0).normalized;
+
         // Rigidbody2D に移動量を加算する
         rb2d.velocity = bulletMovement * bulletSpeed;
 
@@ -49,12 +51,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    //void timedestroy()
-    //{
-    //    if(time <= 5)
-    //    {
-    //        Destroy(this.gameObject);
-    //    }
-    //}
+    void timedestroy()
+    {
+        Destroy(this.gameObject);
+    }
 
 }
