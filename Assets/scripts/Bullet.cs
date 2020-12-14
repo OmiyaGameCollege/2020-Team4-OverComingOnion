@@ -50,10 +50,6 @@ public class Bullet : MonoBehaviour
             SceneManager.LoadScene("Continue");
         }
 
-        if (collision.gameObject.tag == "Uzu")
-        {
-            Destroy(this.gameObject);
-        }
 
     }
 

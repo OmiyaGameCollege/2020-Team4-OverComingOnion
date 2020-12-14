@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/BOSS.unity
     guid: 74fc773de2ab6c349aee7856193c6dd0
   - enabled: 1
+    path: Assets/Scenes/BossStage2.unity
+    guid: d1b2d9d8f56319640b2956c0f45fd874
+  - enabled: 1
+    path: Assets/Scenes/BossGameOver.unity
+    guid: 712e976fde12c8847898cda46643def0
+  - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 3d8c9b76032b1234cb73197fc492c4f9
   m_configObjects: {}
