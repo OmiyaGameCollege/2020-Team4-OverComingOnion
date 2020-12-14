@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Player_Animation : MonoBehaviour
 {
     //インスペクターで設定する
