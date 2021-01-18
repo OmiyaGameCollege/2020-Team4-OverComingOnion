@@ -12,6 +12,8 @@ public class ObjectCollision : MonoBehaviour
     /// このオブジェクトをプレイヤーが踏んだかどうか
     /// </summary>
     [HideInInspector] public bool playerStepOn;
+
+    float time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class ObjectCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time = Time.deltaTime;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,5 +39,11 @@ public class ObjectCollision : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+        //if(time <= 10.0f)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
+
 }
